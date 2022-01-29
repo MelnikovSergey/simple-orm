@@ -36,21 +36,21 @@ try {
 	echo "<pre>";
 	print_r($book);
 	echo "</pre>";
-	echo __FILE__ . ': ' . __LINE__;
+	echo "<hr>";
 
 	$genre = genres::findID(8);
 
 	echo "<pre>";
 	print_r($genre);
 	echo "</pre>";
-	echo __FILE__ . ': ' . __LINE__;
+	echo "<hr>";
 
 	$author = authors::findID(1);
 
 	echo "<pre>";
 	print_r($author);
 	echo "</pre>";
-	echo __FILE__ . ': ' . __LINE__;
+	echo "<hr>";
 } 
 catch(Exception $e) {
 	echo "В ходе работы возникла ошибка";
