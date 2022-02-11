@@ -55,6 +55,23 @@ class ORM {
 		}
 	}
 
+	static function Remove($removeClass) 
+	{
+		if(!is_object($removeClass)){
+			return false;
+		}
+		
+		$id = key(get_class_vars(get_called_class()));
+
+		if(!empty($removeClass->$id)){
+			$query = "DELETE * FROM `" . get_called_class() . "`WHERE `$id` = " . $removeClass->$id ."LIMIT 1";
+
+			return self::$db->query($query);
+		} else {
+			return false;
+		}
+	}
+
 	static function getError() 
 	{
 		return self::$db->error . "[". self::$db->errno ."]";

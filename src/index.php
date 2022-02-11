@@ -2,7 +2,7 @@
 
 define('ROOT', $_SERVER['DOCUMENT_ROOT']);
 
-include "debug.php";
+include ROOT . "/debug.php";
 
 include ROOT . "/orm/orm.php";
 include ROOT . "/setup/config.php";
@@ -36,21 +36,21 @@ try {
 	echo "<pre>";
 	print_r($book);
 	echo "</pre>";
-	echo "<hr>";
+	echo __FILE__ . ': ' . __LINE__;
 
 	$genre = genres::findID(8);
 
 	echo "<pre>";
 	print_r($genre);
 	echo "</pre>";
-	echo "<hr>";
+	echo __FILE__ . ': ' . __LINE__;
 
 	$author = authors::findID(1);
 
 	echo "<pre>";
-	print_r($author);
+	print_r($genre);
 	echo "</pre>";
-	echo "<hr>";
+	echo __FILE__ . ': ' . __LINE__;
 } 
 catch(Exception $e) {
 	echo "В ходе работы возникла ошибка";
