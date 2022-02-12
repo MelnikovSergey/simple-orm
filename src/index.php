@@ -51,6 +51,9 @@ try {
 	print_r($genre);
 	echo "</pre>";
 	echo __FILE__ . ': ' . __LINE__;
+	
+	echo books::Remove($book) ? "Книга удалена" : "Книга не удалена";
+	echo authors::Truncate() ? "Таблица очищена" : "При выполнении операции возникла ошибка";
 } 
 catch(Exception $e) {
 	echo "В ходе работы возникла ошибка";

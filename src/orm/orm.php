@@ -72,6 +72,12 @@ class ORM {
 		}
 	}
 
+	static function Truncate() 
+	{
+		$query = "TRUNCATE TABLE " . get_called_class();
+		return self::$db->query($query);
+	}
+
 	static function getError() 
 	{
 		return self::$db->error . "[". self::$db->errno ."]";
